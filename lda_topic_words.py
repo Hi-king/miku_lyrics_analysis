@@ -62,7 +62,7 @@ for line in words:
     for word in line: counts[word]+=1
 
 ## lda
-lda = gensim.models.LdaModel(corpus=raw_corpus, id2word=dictionary, num_topics=args.k, iterations=100)
+lda = gensim.models.LdaModel(corpus=tfidf_corpus, id2word=dictionary, num_topics=args.k, iterations=100)
 
 ## print
 print("LDA: %d topics from %d lyrics" % (lda.num_topics, len(documents)))
